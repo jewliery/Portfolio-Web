@@ -1,0 +1,119 @@
+.App {
+    font-family: "Roboto", sans-serif;
+    font: normal normal 300 20px/26px Montserrat;
+    letter-spacing: 0px;
+    color: var(--white);
+    h1,
+    .heading1 {
+        font: normal normal 340 132px/132px MADE Mirage;
+        letter-spacing: -10px;
+        color: var(--white);
+        margin: 0;
+    }
+    h2,
+    .heading2 {
+        font: normal normal 64px/72px MADE Mirage;
+        letter-spacing: 0px;
+        color: var(--white);
+        margin: 0;
+    }
+    h3,
+    .heading3 {
+        font: normal normal 500 28px/40px MADE Mirage;
+        letter-spacing: 0px;
+        color: var(--white);
+        margin: 0;
+    }
+    h4,
+    .heading4 {
+        font: normal normal medium 24px/29px MADE Mirage;
+        letter-spacing: 0px;
+        color: var(--white);
+    }
+
+    h5,
+    .heading5
+    {
+        font: normal normal 28px/32px Montserrat;
+        letter-spacing: 0px;
+        color: var(--white);
+        text-align: right;
+    }
+
+    h6,
+    .heading6
+    {
+        font: normal normal 21px/34px Montserrat;
+        letter-spacing: 0px;
+        color: var(--white);
+        text-align: center;
+    }
+
+    .heading7 {
+        font: normal normal 450 52px/62px MADE Mirage;
+        letter-spacing: 0px;
+        color: var(--white);
+        text-align: center;
+    }
+
+    .heading8 {
+        font: normal normal 420 52px/62px MADE Mirage;
+        letter-spacing: 0px;
+        color: var(--black);
+        text-align: left;
+    }
+
+    .text-bold {
+        font: normal normal bold 30px/39px Montserrat;
+        letter-spacing: 0px;
+        color: var(--white);
+    }
+    .text-medium {
+        font: normal normal 500 20px/36px Montserrat;
+        letter-spacing: 0px;
+        color: var(--white);
+    }
+    .text-light {
+        font: normal normal 300 20px/36px Montserrat;
+        letter-spacing: 0px;
+        color: var(--white);
+    }
+    .text-small {
+        font: normal normal 300 17px/23px Montserrat;
+        letter-spacing: 0px;
+        color: var(--white);
+    }
+    .text-grey {
+        font: normal normal 300 17px/23px Montserrat;
+        letter-spacing: 0px;
+        color: var(--text-color-grey);
+    }
+    .text-inverted {
+        color: var(--black);
+    }
+}
+
+@media screen and (max-width: 680px) 
+{
+    h1{
+        font: normal normal 200 72px/72px MADE Mirage !important;
+        letter-spacing: 0px !important;
+    }
+
+
+
+}
+
+@media screen and (max-width: 930px) 
+{
+    h2
+    {
+        font: normal normal 48px/72px MADE Mirage !important;
+    }
+
+    h5
+    {
+        font: normal normal 18px/24px Montserrat !important;
+    }
+}
+

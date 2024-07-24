@@ -1,0 +1,324 @@
+$circle-size: 380px;
+$radius: 1200px;
+$num-elements: 9;
+$angle: (360 / $num-elements);
+$rotation: 0;
+$currentZ: 1;
+
+.overlay
+{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    margin-top: -70%;
+    pointer-events: none;
+    
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 1) 10%,
+        rgba(255, 255, 255, 0),
+        rgba(0, 0, 0, 1) 90%
+   );
+    /*
+    background: radial-gradient(circle 56vmax at var(--flashlightX) var(--flashlightY),
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 1) 100%
+   );*/
+}
+
+.slideshow
+{
+    top: 0%;
+    left: 0%;
+
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 20;
+    background-color:var(--black-transparent);
+    //margin-top: -70%;
+
+    padding-left: 24%;
+    padding-top: 12%;
+}
+
+
+.slide-image
+{
+    //height: 25%;
+    width: 25%;
+    position: absolute;
+    z-index: 5;
+    transition: transform 0.9s ease-in-out;
+    filter: brightness(0.5);
+
+    &:hover{
+        z-index: 10;
+        transform: scale(1.5);
+        transition: transform 0.9s ease-in;
+        filter: brightness(0.9);
+    }
+}
+
+
+.circle_wrapper
+{
+    height: 100%;
+    width: 100%;
+
+    //margin-left: 7%;
+    padding-top: 25%;
+
+    z-index: 0;
+    position: relative;
+}
+
+.circle {
+    margin-left: 7%;
+
+    width: $radius;
+    height: $radius;
+    border-radius: 50%;
+
+    position: relative;
+    transform: rotate(var(--rotation));
+	transition: transform 0.9s ease-in-out;
+}
+
+.circle .item {
+    width: $circle-size;
+    height: $circle-size * 1.2;
+
+    margin-top: 600px;
+    //margin: -($circle-size / 2);
+    position: absolute;
+    transform: rotate(0deg);
+    
+	transition: transform 0.7s linear;
+	top: -($circle-size/2);   /* -child size/2 */
+	left: ($radius/2) -  ($circle-size/2);
+
+}
+
+
+@for $i from 0 through $num-elements
+{
+    .circle .item:nth-child(#{$i})
+    {
+        transform: rotate($rotation * 1deg) translate($radius/ 2 ) rotate($rotation * -1deg);
+        z-index: $currentZ;
+    }
+    $currentZ: $currentZ * -1;
+    $rotation: $rotation + $angle;
+}
+
+.item-content
+{
+    background-color: var(--grey);
+    overflow: hidden;
+
+    z-index: 0;
+    //border-radius: 4%;
+
+    height: 100%;
+    width: 100%;
+
+    transform: rotate(calc(var(--rotation) * -1));
+    transition: transform 0.9s ease-in-out;
+
+    pointer-events: all;
+
+    &:hover{
+        z-index: 10;
+    }
+}
+
+.image-container
+{
+    width: 100%;
+    height: 100%;
+
+    //border-radius: 50%;
+    overflow: hidden;
+
+    position: relative;
+    filter: brightness(0.5);
+    z-index: 0;
+
+    pointer-events: all;
+    transition: transform 0.9s ease-in-out;
+}
+
+.image-container:hover
+{
+    filter: brightness(0.8);
+    transform: scale(1.5);
+    transition: transform 0.9s ease-in;
+}
+
+.text-container
+{
+    margin-top: -100%;
+
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+
+    padding: 12%;
+    pointer-events: none;
+
+}
+
+img {
+    max-width: 125%;
+    max-height: 125%;
+
+}
+
+.redCircleCard
+{
+    height:18%;
+    width: 20%;
+
+    position: relative;
+
+    border-radius: 50%;
+    background-color: var(--red);
+
+    margin-top: -25%;
+    margin-left: 15%;
+}
+
+.titleCard
+{
+    position: relative;
+    z-index: 1;
+}
+
+.buttonSection
+{
+    margin-left: 42%;
+    margin-right: 30%;
+    margin-top: -33%;
+
+    position: relative;
+    z-index: 5;
+
+    display: grid;    
+    grid-template-columns: repeat(auto-fit, minmax(5%, 0.3fr));
+    gap: 0px;
+
+}
+
+.moreButtonWrapper
+{
+    margin-left: 70%;
+}
+
+@media screen and (min-width: 1500px)  {
+    .overlay
+    {
+        margin-top: -42%;
+    }
+}
+@media screen and (max-width: 1500px)  {
+    .overlay
+    {
+        margin-top: -55%;
+    }
+}
+@media screen and (max-width: 1400px)  {
+    .overlay
+    {
+        margin-top: -50%;
+    }
+}
+
+@media screen and (max-width: 1380px)  {
+    .overlay
+    {
+        margin-top: -56%;
+    }
+    
+}
+
+@media screen and (max-width: 1300px)  {
+    .overlay
+    {
+        margin-top: -60%;
+    }
+}
+
+@media screen and (max-width: 1260px)  {
+    .overlay
+    {
+        margin-top: -68%;
+    }
+}
+
+@media screen and (max-width: 1220px)  {
+    .overlay
+    {
+        margin-top: -71%;
+    }
+}
+
+@media screen and (max-width: 1180px)  {
+    .overlay
+    {
+        margin-top: -78%;
+    }
+}
+
+@media screen and (max-width: 1100px)  {
+    .overlay
+    {
+        margin-top: -80%;
+    }
+}
+
+@media screen and (max-width: 1000px)  {
+    .overlay
+    {
+        margin-top: -90%;
+    }
+}
+
+@media screen and (max-width: 920px)  {
+    .overlay
+    {
+        margin-top: -100%;
+    }
+}
+
+@media screen and (max-width: 900px)  {
+    .overlay
+    {
+        margin-top: -120%;
+    }
+}
+
+@media screen and (max-width: 720px)  {
+    .overlay
+    {
+        margin-top: -140%;
+    }
+}
+
+@media screen and (max-width: 620px)  {
+    .overlay
+    {
+        margin-top: -160%;
+    }
+}
+
+@media screen and (max-width: 560px)  {
+    .overlay
+    {
+        margin-top: -180%;
+    }
+}
+
